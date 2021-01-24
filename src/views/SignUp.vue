@@ -5,32 +5,67 @@
         <form action="#">
           <!--			<h1></h1>-->
           <form class="form" style="">
-            <input type="email" class="form__field" placeholder="E-mail"/>
-            <button type="button" class="btn btn--primary btn--inside uppercase" title="Meu e-mail principal">E-mail
+            <input type="email" class="form__field" placeholder="E-mail" />
+            <button
+              type="button"
+              class="btn btn--primary btn--inside uppercase"
+              title="Meu e-mail principal"
+            >
+              E-mail
             </button>
-            <input type="email" class="form__field" placeholder="Nome"/>
-            <button type="button" class="btn btn--primary btn--inside uppercase"
-                    title="Meu nome completo">Nome</button>
-            <input type="email" class="form__field" placeholder="Senha"
-                   title="Minha senha secreta"/>
-            <button type="button" class="btn btn--primary btn--inside uppercase">Senha</button>
-<!--            <button ref="button_submit" v-on:click.prevent="updateButtonMsg" class="submit-button state-0 submit-button-color"><span class="pre-state-msg">Cadastrar</span><span-->
-<!--                class="current-state-msg hide">Enviando...</span><span class="done-state-msg hide">Finalizado!</span></button>-->
+            <input type="email" class="form__field" placeholder="Nome" />
+            <button
+              type="button"
+              class="btn btn--primary btn--inside uppercase"
+              title="Meu nome completo"
+            >
+              Nome
+            </button>
+            <input
+              type="email"
+              class="form__field"
+              placeholder="Senha"
+              title="Minha senha secreta"
+            />
+            <button
+              type="button"
+              class="btn btn--primary btn--inside uppercase"
+            >
+              Senha
+            </button>
+            <!--            <button ref="button_submit" v-on:click.prevent="updateButtonMsg" class="submit-button state-0 submit-button-color"><span class="pre-state-msg">Cadastrar</span><span-->
+            <!--                class="current-state-msg hide">Enviando...</span><span class="done-state-msg hide">Finalizado!</span></button>-->
           </form>
           <button @click.prevent="signInUp()">teste</button>
         </form>
       </div>
       <div class="form-container sign-in-container">
         <form class="form" style="">
-          <input type="email" class="form__field" placeholder="E-mail"/>
-          <button type="button" class="btn btn--primary btn--inside uppercase" title="Meu e-mail principal">E-mail
+          <input type="email" class="form__field" placeholder="E-mail" />
+          <button
+            type="button"
+            class="btn btn--primary btn--inside uppercase"
+            title="Meu e-mail principal"
+          >
+            E-mail
           </button>
-          <input type="email" class="form__field" placeholder="Nome"/>
-          <button type="button" class="btn btn--primary btn--inside uppercase"
-                  title="Meu nome completo">Nome</button>
-          <input type="email" class="form__field" placeholder="Senha"
-                 title="Minha senha secreta"/>
-          <button type="button" class="btn btn--primary btn--inside uppercase">Senha</button>
+          <input type="email" class="form__field" placeholder="Nome" />
+          <button
+            type="button"
+            class="btn btn--primary btn--inside uppercase"
+            title="Meu nome completo"
+          >
+            Nome
+          </button>
+          <input
+            type="email"
+            class="form__field"
+            placeholder="Senha"
+            title="Minha senha secreta"
+          />
+          <button type="button" class="btn btn--primary btn--inside uppercase">
+            Senha
+          </button>
           <!--            <button ref="button_submit" v-on:click.prevent="updateButtonMsg" class="submit-button state-0 submit-button-color"><span class="pre-state-msg">Cadastrar</span><span-->
           <!--                class="current-state-msg hide">Enviando...</span><span class="done-state-msg hide">Finalizado!</span></button>-->
         </form>
@@ -40,7 +75,11 @@
           <div class="overlay-panel overlay-left">
             <!--				<h1>Welcome Back!</h1>-->
             <!--				<p>To keep connected with us please login with your personal info</p>-->
-            <button v-on:click="signInDown" class="button" style="letter-spacing: 3px">
+            <button
+              v-on:click="signInDown"
+              class="button"
+              style="letter-spacing: 3px"
+            >
               JÁ POSSUI UMA CONTA?
               <div class="button__horizontal"></div>
               <div class="button__vertical"></div>
@@ -49,7 +88,11 @@
           <div class="overlay-panel overlay-right">
             <!--				<h1>Olá, amigo</h1>-->
             <!--				<p>Insira seus dados pessoais e comece a jornada conosco!</p>-->
-            <button v-on:click="signInUp" class="button" style="letter-spacing: 3px">
+            <button
+              v-on:click="signInUp"
+              class="button"
+              style="letter-spacing: 3px"
+            >
               NOVO POR AQUI?
               <div class="button__horizontal"></div>
               <div class="button__vertical"></div>
@@ -62,28 +105,22 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Home",
   components: {},
-  setup() {
-  },
+  setup() {},
   methods: {
-
-
     signInUp() {
       //   const signUpButton = this.$refs
       // console.log(ref('signUp'))
 
       const container: any = this.$refs.container;
 
-
       setTimeout(function () {
         container.classList.add("right-panel-active");
-
       }, 500);
-
 
       // ref('container')
     },
@@ -92,47 +129,42 @@ export default defineComponent({
 
       setTimeout(function () {
         container.classList.remove("right-panel-active");
-
       }, 500);
     },
     updateButtonMsg() {
-      const self = this
+      const self = this;
 
       const button: any = this.$refs.button_submit;
 
-      button.classList.remove('submit-button-color');
-      button.classList.add('state-1', 'animated', 'submit-button-color-1');
+      button.classList.remove("submit-button-color");
+      button.classList.add("state-1", "animated", "submit-button-color-1");
 
       setTimeout(self.finalButtonMsg, 2000);
     },
     finalButtonMsg() {
-
-      const self = this
+      const self = this;
 
       const button: any = this.$refs.button_submit;
 
-      button.classList.add('state-2');
+      button.classList.add("state-2");
 
       setTimeout(self.setInitialButtonState, 2000);
     },
-    setInitialButtonState(){
-      const self = this
+    setInitialButtonState() {
+      const self = this;
 
       const button: any = this.$refs.button_submit;
 
-      button.classList.remove('submit-button-color-1');
-      button.classList.add('submit-button-color');
-      button.classList.remove('state-1', 'state-2', 'animated');
-
-    }
+      button.classList.remove("submit-button-color-1");
+      button.classList.add("submit-button-color");
+      button.classList.remove("state-1", "state-2", "animated");
+    },
   },
 });
 </script>
 
 <style>
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
 * {
   box-sizing: border-box;
@@ -149,10 +181,10 @@ export default defineComponent({
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   height: 100%;
   margin: -20px 0 50px;
-  overflow: hidden
+  overflow: hidden;
 }
 
 h1 {
@@ -186,7 +218,7 @@ a {
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 
 form {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   margin-top: 40px;
   font: 1rem "PT Sans", sans-serif !important;
   /*display: flex;*/
@@ -225,27 +257,6 @@ a:hover {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
-  .btn--primary {
-    display: none;
-    background: #809fff;
-    color: #fff;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    padding: 12px 36px;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .btn--primary {
-    background: #809fff;
-    color: #fff;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    padding: 12px 36px;
-  }
-}
-
 .btn--primary:hover {
   background: #668cff;
 }
@@ -271,18 +282,18 @@ a:hover {
   margin-top: 25px;
 }
 
+/*************  max-width 600px MAIN *******************/
 
 @media only screen and (max-width: 600px) {
   .container {
     background-color: #fff;
     border-radius: 15px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-    0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     position: relative;
     overflow: hidden;
     width: 100vw;
     max-width: 100%;
-       /*height: 300px;*/
+    /*height: 300px;*/
     height: 90vh;
     object-fit: cover;
     min-height: 500px;
@@ -302,7 +313,9 @@ a:hover {
   .form-container {
     position: absolute;
     top: 350px;
-    height: 100%;
+    height: 50%!important;
+    max-height: 50%!important;
+    width: 100%;
     transition: all 0.6s ease-in-out;
   }
   .sign-in-container {
@@ -317,7 +330,7 @@ a:hover {
     background-repeat: repeat;
     background-size: cover;
     background-position: 0 0;
-    color: #FFFFFF;
+    color: #ffffff;
     position: relative;
     left: -100%;
     height: 100%;
@@ -329,66 +342,31 @@ a:hover {
   .container.right-panel-active .overlay {
     transform: translateX(50%);
   }
-}
-
-@media only screen and (min-width: 600px) {
-  .container {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-    0 10px 10px rgba(0, 0, 0, 0.22);
-    position: relative;
-    overflow: hidden;
-    width: 600px;
-    max-width: 100%;
-    /*height: 300px;*/
-    height: 90vh;
-    object-fit: cover;
-    min-height: 375px;
-    transform: scale(0.8);
-    /*transform-origin: 0 0;*/
-  }
-  .overlay-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out;
-    z-index: 100;
+    .btn--primary {
+    display: none;
+    background: #809fff;
+    color: #fff;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 12px 36px;
   }
   .form-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
+    top: 200px !important;
   }
-  .sign-in-container {
-    left: 0;
-    width: 50%;
-    z-index: 2;
+  .form__field {
+    padding: 16px 12px !important;
+        margin: 10px 0!important;
   }
-  .overlay {
-    background: #3366ff;
-    background: -webkit-linear-gradient(to top, #3366ff, #668cff);
-    background: linear-gradient(to top, #3366ff, #668cff);
-    background-repeat: repeat;
-    background-size: cover;
-    background-position: 0 0;
-    color: #FFFFFF;
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
+  .form{
+        margin: 2.5rem 0!important;
   }
-
-  .container.right-panel-active .overlay {
-    transform: translateX(50%);
+  .sign-up-container{
+    transform: none!important;
+        width: 100%!important;
   }
 }
+
+
 
 .container.right-panel-active .sign-in-container {
   transform: translateX(100%);
@@ -411,12 +389,14 @@ a:hover {
 /*@media */
 
 @keyframes show {
-  0%, 49.99% {
+  0%,
+  49.99% {
     opacity: 0;
     z-index: 1;
   }
 
-  50%, 100% {
+  50%,
+  100% {
     opacity: 1;
     z-index: 5;
   }
@@ -463,7 +443,7 @@ a:hover {
 }
 
 .social-container a {
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
   border-radius: 50%;
   display: inline-flex;
   justify-content: center;
@@ -522,7 +502,8 @@ footer a {
   transition: background 0.8s ease;
 }
 
-.button__horizontal, .button__vertical {
+.button__horizontal,
+.button__vertical {
   position: absolute;
   top: var(--horizontal-offset, 0);
   right: var(--vertical-offset, 0);
@@ -532,7 +513,8 @@ footer a {
   will-change: transform;
 }
 
-.button__horizontal::before, .button__vertical::before {
+.button__horizontal::before,
+.button__vertical::before {
   content: "";
   position: absolute;
   border: inherit;
@@ -571,7 +553,6 @@ footer a {
 .button:focus .button__vertical {
   transform: scaleY(0);
 }
-
 
 /*button confirm */
 
@@ -632,7 +613,8 @@ footer a {
   background: #b3c6ff;
 }
 
-.submit-button:hover, .submit-button:focus {
+.submit-button:hover,
+.submit-button:focus {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -661,5 +643,156 @@ footer a {
 
 .submit-button.state-2 .pre-state-msg {
   margin-top: -75px;
+}
+
+/*************  max-width 600px MAIN *******************/
+
+@media only screen and (max-width: 600px) {
+  .container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    max-width: 100%;
+    /*height: 300px;*/
+    height: 90vh;
+    object-fit: cover;
+    min-height: 500px;
+    transform: scale(0.8);
+    /*transform-origin: 0 0;*/
+  }
+  .overlay-container {
+    position: absolute;
+    top: 0;
+    /*left: 50%;*/
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+    height: 300px;
+    line-height: 300px;
+  }
+  .form-container {
+    top: 0;
+    transition: all 0.6s ease-in-out;
+      height: 300px;
+    line-height: 300px;
+    position: unset;
+  }
+  .form{
+      margin-top: 0;
+  }
+  .sign-in-container {
+    left: 0;
+    width: 100%;
+    z-index: 2;
+  }
+  .overlay {
+    background: #3366ff;
+    background: -webkit-linear-gradient(to top, #3366ff, #668cff);
+    background: linear-gradient(to top, #3366ff, #668cff);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: #ffffff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+  }
+  .overlay-left{
+    float: right;
+  }
+
+  .container.right-panel-active .overlay {
+    transform: translateX(50%);
+  }
+    .btn--primary {
+    display: none;
+    background: #809fff;
+    color: #fff;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 12px 36px;
+  }
+  .form-container {
+     
+  }
+  .form__field {
+    padding: 16px 12px !important;
+  }
+}
+
+
+
+/*************  min-width 600px MAIN *******************/
+@media only screen and (min-width: 600px) {
+    .btn--primary {
+    background: #809fff;
+    color: #fff;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 12px 36px;
+  }
+  .container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 600px;
+    max-width: 100%;
+    /*height: 300px;*/
+    height: 90vh;
+    object-fit: cover;
+    min-height: 375px;
+    transform: scale(0.8);
+    /*transform-origin: 0 0;*/
+  }
+  .overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+  }
+  .form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+  }
+  .sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+  }
+  .overlay {
+    background: #3366ff;
+    background: -webkit-linear-gradient(to top, #3366ff, #668cff);
+    background: linear-gradient(to top, #3366ff, #668cff);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: #ffffff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+  }
+
+  .container.right-panel-active .overlay {
+    transform: translateX(50%);
+  }
 }
 </style>
